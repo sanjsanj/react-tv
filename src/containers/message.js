@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const userAvatarAltText = user => `${user.firstName} ${user.lastName}'s avatar`;
+
+const formattedDateTime = timestamp => new Date(timestamp).toGMTString();
+
 const Message = ({ data, user }) => {
   const [visibility, setVisibility] = React.useState('hidden');
 
   const handleMouseEnter = () => setVisibility('visible');
 
   const handleMouseLeave = () => setVisibility('hidden');
-
-  const userAvatarAltText = user => `${user.firstName} ${user.lastName}'s avatar`;
 
   return (
     <li>
@@ -17,6 +19,8 @@ const Message = ({ data, user }) => {
       <div className="message" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         {data.message}
       </div>
+
+      <div className="timestamp">{formattedDateTime(data.timestamp)}</div>
 
       {user && (
         <div className="email" style={{ visibility }}>

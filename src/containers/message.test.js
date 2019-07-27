@@ -61,4 +61,11 @@ describe('Message', () => {
 
     expect(userAvatar.exists()).toEqual(true);
   });
+
+  it('should display the message timestamp', () => {
+    const timestamp = tree.find('.timestamp');
+    const expectedTimestamp = new Date(messagesPayload[0].timestamp).toGMTString();
+
+    expect(timestamp.text()).toEqual(expectedTimestamp);
+  });
 });

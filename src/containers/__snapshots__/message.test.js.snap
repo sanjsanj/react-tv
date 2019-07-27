@@ -15,6 +15,11 @@ exports[`Message should match snapshot 1`] = `
     Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.
   </div>
   <div
+    className="timestamp"
+  >
+    Thu, 09 Feb 2017 04:27:38 GMT
+  </div>
+  <div
     className="email"
     style={
       Object {
