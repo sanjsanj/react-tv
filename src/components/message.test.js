@@ -34,17 +34,12 @@ describe('Message', () => {
     expect(expectedText).toEqual(actualText);
   });
 
-  it('should not display user email when not hovering over message', () => {
+  it('should display user email when mousing over message', () => {
+    const message = tree.find('.message');
+    message.simulate('mouseenter');
     const userEmail = tree.find('.email');
 
-    expect(userEmail.prop('style')).toHaveProperty('visibility', 'hidden');
-  });
-
-  it('should display user email when mousing over message', () => {
-    // const message = tree.find('.message');
-    // const userEmail = tree.find('.email');
-    // message.simulate('mouseenter');
-    // expect(userEmail.prop('style')).toHaveProperty('visibility', 'visible');
+    expect(userEmail.prop('style')).toHaveProperty('visibility', 'visible');
   });
 
   it('should not display user email when mouse leaves message', () => {
