@@ -3,11 +3,9 @@ import React from 'react';
 import Home from './home';
 
 const App = () => (
-  <div>
-    <main>
-      <Home />
-    </main>
-  </div>
+  <main>
+    <Home />
+  </main>
 );
 
 export default App;
