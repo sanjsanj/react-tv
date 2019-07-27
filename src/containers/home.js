@@ -7,16 +7,18 @@ import { loadMembers } from '../action-creators/members';
 
 import Message from './message';
 
-const Home = ({ loadMessages, loadMembers, messages }) => {
+const Home = ({ loadMessages, loadMembers, messages, members }) => {
   React.useEffect(() => {
     loadMessages();
     loadMembers();
   }, [loadMessages, loadMembers]);
 
+  const findUserFromMessageUserId = userId => members.find(member => member.id === userId);
+
   return (
     <ul>
       {messages.map(message => (
-        <Message key={message.id} data={message} />
+        <Message key={message.id} data={message} user={findUserFromMessageUserId(message.userId)} />
       ))}
     </ul>
   );
@@ -33,9 +35,22 @@ Home.propTypes = {
       id: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
+  members: PropTypes.arrayOf(
+    PropTypes.shape({
+      email: PropTypes.string.isRequired,
+      firstName: PropTypes.string,
+      lastName: PropTypes.string,
+      avatar: PropTypes.string,
+      ip: PropTypes.string,
+      id: PropTypes.string,
+    }).isRequired
+  ).isRequired,
 };
 
-const mapStateToProps = state => ({ messages: state.messages });
+const mapStateToProps = state => ({
+  messages: state.messages,
+  members: state.members,
+});
 
 const mapDispatchToProps = { loadMessages, loadMembers };
 

@@ -17,7 +17,7 @@ exports[`Message should match snapshot 1`] = `
       }
     }
   >
-    user email
+    mbradley0@google.it
   </div>
 </li>
 `;

@@ -15,7 +15,7 @@ export const messagesPayload = [
 
 export const membersPayload = [
   {
-    id: 'e837c9f5-247f-445f-bcc3-7d434348336b',
+    id: 'fe27b760-a915-475c-80bb-7cdf14cc6ef3',
     firstName: 'Martin',
     lastName: 'Bradley',
     email: 'mbradley0@google.it',
@@ -23,7 +23,7 @@ export const membersPayload = [
     ip: '166.124.172.160',
   },
   {
-    id: 'cae5d3af-9ac7-471e-9061-e2e9d75f00e4',
+    id: '16373df5-da0a-4074-8295-f916b94269f4',
     firstName: 'Helen',
     lastName: 'Hawkins',
     email: 'hhawkins1@posterous.com',

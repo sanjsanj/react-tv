@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { messagesPayload } from '../utils/test-helpers';
+import { messagesPayload, membersPayload } from '../utils/test-helpers';
 
 import Message from './Message';
 
@@ -11,6 +11,7 @@ describe('Message', () => {
   beforeAll(() => {
     const props = {
       data: messagesPayload[0],
+      user: membersPayload[0],
     };
 
     tree = shallow(<Message {...props} />);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { messagesPayload } from '../utils/test-helpers';
+import { messagesPayload, membersPayload } from '../utils/test-helpers';
 
 import Home from './home';
 
@@ -12,6 +12,7 @@ describe('Home', () => {
   beforeAll(() => {
     const props = {
       messages: messagesPayload,
+      members: membersPayload,
       loadMessages: jest.fn(),
       loadMembers: jest.fn(),
     };

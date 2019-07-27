@@ -12,6 +12,16 @@ exports[`Home should match snapshot 1`] = `
       }
     }
     key="cd445e6d-e514-424f-ba8f-16ec842002c6"
+    user={
+      Object {
+        "avatar": "http://dummyimage.com/100x100.png/5fa2dd/ffffff",
+        "email": "mbradley0@google.it",
+        "firstName": "Martin",
+        "id": "fe27b760-a915-475c-80bb-7cdf14cc6ef3",
+        "ip": "166.124.172.160",
+        "lastName": "Bradley",
+      }
+    }
   />
   <Message
     data={
@@ -23,6 +33,16 @@ exports[`Home should match snapshot 1`] = `
       }
     }
     key="b03569ae-ccbf-4975-8040-4daba638b407"
+    user={
+      Object {
+        "avatar": "http://dummyimage.com/100x100.jpg/dddddd/000000",
+        "email": "hhawkins1@posterous.com",
+        "firstName": "Helen",
+        "id": "16373df5-da0a-4074-8295-f916b94269f4",
+        "ip": "179.239.189.173",
+        "lastName": "Hawkins",
+      }
+    }
   />
 </ul>
 `;

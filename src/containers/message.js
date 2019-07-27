@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Message = ({ data }) => {
+const Message = ({ data, user }) => {
   const [visibility, setVisibility] = React.useState('hidden');
 
   const handleMouseEnter = () => setVisibility('visible');
@@ -14,9 +14,11 @@ const Message = ({ data }) => {
         {data.message}
       </div>
 
-      <div className="email" style={{ visibility }}>
-        user email
-      </div>
+      {user && (
+        <div className="email" style={{ visibility }}>
+          {user.email}
+        </div>
+      )}
     </li>
   );
 };
@@ -28,6 +30,14 @@ Message.propTypes = {
     userId: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
   }).isRequired,
+  user: PropTypes.shape({
+    email: PropTypes.string.isRequired,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    avatar: PropTypes.string,
+    ip: PropTypes.string,
+    id: PropTypes.string,
+  }),
 };
 
 export default Message;
