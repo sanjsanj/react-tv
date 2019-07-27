@@ -1,16 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home should mount 1`] = `
+exports[`Home should match snapshot 1`] = `
 <ul>
-  <li
+  <Message
+    data={
+      Object {
+        "id": "cd445e6d-e514-424f-ba8f-16ec842002c6",
+        "message": "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
+        "timestamp": "2017-02-09T04:27:38Z",
+        "userId": "fe27b760-a915-475c-80bb-7cdf14cc6ef3",
+      }
+    }
     key="cd445e6d-e514-424f-ba8f-16ec842002c6"
-  >
-    Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.
-  </li>
-  <li
+  />
+  <Message
+    data={
+      Object {
+        "id": "b03569ae-ccbf-4975-8040-4daba638b407",
+        "message": "Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.",
+        "timestamp": "2016-11-09T05:04:58Z",
+        "userId": "16373df5-da0a-4074-8295-f916b94269f4",
+      }
+    }
     key="b03569ae-ccbf-4975-8040-4daba638b407"
-  >
-    Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.
-  </li>
+  />
 </ul>
 `;

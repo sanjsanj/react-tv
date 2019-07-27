@@ -7,6 +7,7 @@ import Home from './home';
 
 describe('Home', () => {
   let tree;
+  let messageList;
 
   beforeAll(() => {
     const props = {
@@ -16,15 +17,14 @@ describe('Home', () => {
     };
 
     tree = shallow(<Home.WrappedComponent {...props} />);
+    messageList = tree.find('Message');
   });
 
-  it('should mount', () => {
+  it('should match snapshot', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should display 2 mocked messages', () => {
-    const messageList = tree.find('li');
-
+  it('should display 2 messages', () => {
     expect(messageList.length).toEqual(2);
   });
 });

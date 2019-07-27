@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { loadMessages } from '../action-creators/messages';
 import { loadMembers } from '../action-creators/members';
 
+import Message from './message';
+
 const Home = ({ loadMessages, loadMembers, messages }) => {
   React.useEffect(() => {
     loadMessages();
@@ -13,8 +15,8 @@ const Home = ({ loadMessages, loadMembers, messages }) => {
 
   return (
     <ul>
-      {messages.map(m => (
-        <li key={m.id}>{m.message}</li>
+      {messages.map(message => (
+        <Message key={message.id} data={message} />
       ))}
     </ul>
   );

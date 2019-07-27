@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message should match snapshot 1`] = `
+<li>
+  <div
+    className="message"
+  >
+    Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.
+  </div>
+  <div
+    className="email"
+  >
+    user email
+  </div>
+</li>
+`;
