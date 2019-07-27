@@ -14,7 +14,13 @@ const Message = ({ data, user }) => {
 
   return (
     <li>
-      {user && user.avatar && <img className="avatar" src={user.avatar} alt={userAvatarAltText(user)} />}
+      {user && (
+        <img
+          src={user.avatar || 'http://dummyimage.com/100x100.jpg'}
+          alt={userAvatarAltText(user)}
+          className="avatar"
+        />
+      )}
 
       <div className="message" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         {data.message}
