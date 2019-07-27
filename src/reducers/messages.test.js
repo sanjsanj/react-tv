@@ -1,4 +1,4 @@
-import messages from './messages';
+import messages, { messagesInitialState } from './messages';
 import { MESSAGES_LOADED } from '../action-creators/action-types';
 
 describe('messages reducer', () => {
@@ -16,6 +16,10 @@ describe('messages reducer', () => {
       timestamp: '2016-11-09T05:04:58Z',
     },
   ];
+
+  it('should return messagesInitialState when no action caught', () => {
+    expect(messages(undefined, {})).toEqual(messagesInitialState);
+  });
 
   it('should set messages on messages loaded', () => {
     expect(
