@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home should match snapshot 1`] = `
-<ul>
+<ol>
   <Message
     data={
       Object {
@@ -44,5 +44,5 @@ exports[`Home should match snapshot 1`] = `
       }
     }
   />
-</ul>
+</ol>
 `;
