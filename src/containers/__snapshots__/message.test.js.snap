@@ -9,6 +9,11 @@ exports[`Message should match snapshot 1`] = `
   </div>
   <div
     className="email"
+    style={
+      Object {
+        "visibility": "hidden",
+      }
+    }
   >
     user email
   </div>

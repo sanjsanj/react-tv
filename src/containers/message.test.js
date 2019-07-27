@@ -27,4 +27,10 @@ describe('Message', () => {
 
     expect(expectedText).toEqual(actualText);
   });
+
+  it('should not display user email when not hovering over message', () => {
+    const userEmail = tree.find('.email');
+
+    expect(userEmail.prop('style')).toHaveProperty('visibility', 'hidden');
+  });
 });

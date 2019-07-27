@@ -6,7 +6,9 @@ const Message = ({ data }) => {
     <li>
       <div className="message">{data.message}</div>
 
-      <div className="email">user email</div>
+      <div className="email" style={{ visibility: 'hidden' }}>
+        user email
+      </div>
     </li>
   );
 };
