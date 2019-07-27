@@ -12,6 +12,7 @@ describe('Home', () => {
     const props = {
       messages: messagesPayload,
       loadMessages: jest.fn(),
+      loadMembers: jest.fn(),
     };
 
     tree = shallow(<Home.WrappedComponent {...props} />);
