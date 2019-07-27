@@ -31,12 +31,12 @@ describe('Home', () => {
   });
 
   it('should sort messages by time descending', () => {
-    const unorderedMessageProps = (props = {
+    const unorderedMessageProps = {
       messages: [messagesPayload[1], messagesPayload[0]],
       members: membersPayload,
       loadMessages: jest.fn(),
       loadMembers: jest.fn(),
-    });
+    };
 
     tree = shallow(<Home.WrappedComponent {...unorderedMessageProps} />);
 
