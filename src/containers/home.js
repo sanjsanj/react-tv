@@ -1,28 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
 import { loadMessages } from '../action-creators/messages';
 
-class Home extends React.Component {
-  componentDidMount() {
-    this.props.loadMessages();
-  }
+const Home = ({ loadMessages, messages }) => {
+  React.useEffect(() => {
+    loadMessages();
+  }, [loadMessages]);
 
-  render() {
-    return <div>This is Test</div>;
-  }
-}
-
-const mapStateToProps = state => ({
-  messages: state.messages,
-});
-
-const mapDispatchToProps = dispatch => bindActionCreators({ loadMessages }, dispatch);
+  return (
+    <ul>
+      {messages.map(m => (
+        <li key={m.id}>{m.message}</li>
+      ))}
+    </ul>
+  );
+};
 
 Home.propTypes = {
-  loadMessages: PropTypes.func,
+  loadMessages: PropTypes.func.isRequired,
+  messages: PropTypes.arrayOf(
+    PropTypes.shape({
+      timestamp: PropTypes.string.isRequired,
+      message: PropTypes.string.isRequired,
+      userId: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 };
+
+const mapStateToProps = state => ({ messages: state.messages });
+
+const mapDispatchToProps = { loadMessages };
 
 export default connect(
   mapStateToProps,

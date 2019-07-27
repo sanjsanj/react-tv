@@ -1,7 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
-<div>
-  This is Test
-</div>
+exports[`Home should mount 1`] = `
+<ul>
+  <li
+    key="cd445e6d-e514-424f-ba8f-16ec842002c6"
+  >
+    Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.
+  </li>
+  <li
+    key="b03569ae-ccbf-4975-8040-4daba638b407"
+  >
+    Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.
+  </li>
+</ul>
 `;
