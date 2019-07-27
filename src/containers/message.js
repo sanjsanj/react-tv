@@ -2,11 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Message = ({ data }) => {
+  const [visibility, setVisibility] = React.useState('hidden');
+
+  const handleMouseEnter = () => setVisibility('visible');
+
+  const handleMouseLeave = () => setVisibility('hidden');
+
   return (
     <li>
-      <div className="message">{data.message}</div>
+      <div className="message" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        {data.message}
+      </div>
 
-      <div className="email" style={{ visibility: 'hidden' }}>
+      <div className="email" style={{ visibility }}>
         user email
       </div>
     </li>

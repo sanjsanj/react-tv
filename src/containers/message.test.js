@@ -16,6 +16,11 @@ describe('Message', () => {
     tree = shallow(<Message {...props} />);
   });
 
+  beforeEach(() => {
+    const message = tree.find('.message');
+    message.simulate('mouseleave');
+  });
+
   it('should match snapshot', () => {
     expect(tree).toMatchSnapshot();
   });
@@ -30,6 +35,22 @@ describe('Message', () => {
 
   it('should not display user email when not hovering over message', () => {
     const userEmail = tree.find('.email');
+
+    expect(userEmail.prop('style')).toHaveProperty('visibility', 'hidden');
+  });
+
+  it('should display user email when mousing over message', () => {
+    const message = tree.find('.message');
+    const userEmail = tree.find('.email');
+    message.simulate('mouseenter');
+
+    expect(userEmail.prop('style')).toHaveProperty('visibility', 'visible');
+  });
+
+  it('should not display user email when mouse leaves message', () => {
+    const message = tree.find('.message');
+    const userEmail = tree.find('.email');
+    message.simulate('mouseleave');
 
     expect(userEmail.prop('style')).toHaveProperty('visibility', 'hidden');
   });
