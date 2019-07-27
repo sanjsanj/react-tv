@@ -15,9 +15,11 @@ const Home = ({ loadMessages, loadMembers, messages, members }) => {
 
   const findUserFromMessageUserId = userId => members.find(member => member.id === userId);
 
+  const timeSortedMessages = messages.sort((a, b) => (a.timestamp > b.timestamp ? -1 : 1));
+
   return (
     <ul>
-      {messages.map(message => (
+      {timeSortedMessages.map(message => (
         <Message key={message.id} data={message} user={findUserFromMessageUserId(message.userId)} />
       ))}
     </ul>
