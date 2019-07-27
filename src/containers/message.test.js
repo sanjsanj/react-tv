@@ -55,4 +55,10 @@ describe('Message', () => {
 
     expect(userEmail.prop('style')).toHaveProperty('visibility', 'hidden');
   });
+
+  it('should display the user avatar next to the message', () => {
+    const userAvatar = tree.find('.avatar');
+
+    expect(userAvatar.exists()).toEqual(true);
+  });
 });

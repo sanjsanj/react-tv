@@ -8,8 +8,12 @@ const Message = ({ data, user }) => {
 
   const handleMouseLeave = () => setVisibility('hidden');
 
+  const userAvatarAltText = user => `${user.firstName} ${user.lastName}'s avatar`;
+
   return (
     <li>
+      {user && user.avatar && <img className="avatar" src={user.avatar} alt={userAvatarAltText(user)} />}
+
       <div className="message" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         {data.message}
       </div>
