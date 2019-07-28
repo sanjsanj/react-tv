@@ -30,7 +30,7 @@ describe('Home', () => {
     expect(messageList.length).toEqual(2);
   });
 
-  it('should sort messages by time descending', () => {
+  it('should sort unsorted messages by time descending', () => {
     const unorderedMessageProps = {
       messages: [messagesPayload[1], messagesPayload[0]],
       members: membersPayload,
